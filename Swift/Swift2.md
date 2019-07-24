@@ -365,3 +365,6 @@ pointer1 += pointer2
 ```
 
 [extension及fatalError](https://www.cnblogs.com/Jepson1218/p/5277682.html)
+
+[上一页 Swift1-数据类型 元组 枚举 结构体](https://github.com/DDYSwift/LearnSwift/blob/master/Swift/Swift1.md)      
+[下一页 Swift3-访问修饰词 函数 闭包](https://github.com/DDYSwift/LearnSwift/blob/master/Swift/Swift3.md)
