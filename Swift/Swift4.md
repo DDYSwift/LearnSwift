@@ -574,4 +574,5 @@ class ExtensionWhereTest: NSObject {
  [.](https://www.jianshu.com/p/325aa6168013)
  
 
-
+[上一页 Swift3-访问修饰词 函数 闭包](https://github.com/DDYSwift/LearnSwift/blob/master/Swift/Swift3.md)    
+[下一页 Swift5-转型 可选链 其他知识点](https://github.com/DDYSwift/LearnSwift/blob/master/Swift/Swift5.md)
