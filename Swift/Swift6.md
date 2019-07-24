@@ -672,7 +672,14 @@ Group queue 可以通过调用dispatch_group_create()来创建，通过dispatch_
 	```
 
 	
-[参考 Swift4 - GCD的使用](https://blog.csdn.net/longshihua/article/details/79756676)
-[参考 Swift4.0 - GCD](https://www.jianshu.com/p/96032a032c7c)
-[参考 多线程之GCD](https://blog.csdn.net/longshihua/article/details/50523051)
-[参考 从使用场景了解GCD新API](https://www.jianshu.com/p/fc78dab5736f)
+[参考 Swift4 - GCD的使用](https://blog.csdn.net/longshihua/article/details/79756676)    
+[参考 Swift4.0 - GCD](https://www.jianshu.com/p/96032a032c7c)    
+[参考 多线程之GCD](https://blog.csdn.net/longshihua/article/details/50523051)   
+[参考 从使用场景了解GCD新API](https://www.jianshu.com/p/fc78dab5736f)   
+
+
+    
+ [上一页 Swift5-转型 可选链 其他知识点](https://github.com/DDYSwift/LearnSwift/blob/master/Swift/Swift5.md)    
+ [下一页 Swift7-高阶函数 map flatMap compactMap filter reduce](https://github.com/DDYSwift/LearnSwift/blob/master/Swift/Swift7.md)
+  
+  
