@@ -242,3 +242,7 @@
 	[参考](https://www.jianshu.com/p/cab8f6ffb082)     
 	[参考](https://www.jianshu.com/p/940aaca1e3f6)    
 	[RSA加密](https://www.jianshu.com/p/d2cb314d30ec)    
+	
+	
+	[上一页 Swift8-琐碎知识点](https://github.com/DDYSwift/LearnSwift/blob/master/Swift/Swift8.md)   
+	[下一页 Swift8-琐碎知识点](https://github.com/DDYSwift/LearnSwift/blob/master/Swift/Swift8.md)
