@@ -349,3 +349,5 @@ pngData()和jpegData() 为nil
 文档中指明：May return nil if image has no CGImageRef or invalid bitmap format
 
 
+[上一页 Swift4-类 属性 协议 范型 扩展](https://github.com/DDYSwift/LearnSwift/blob/master/Swift/Swift4.md)   
+[下一页 Swift6-多线程](https://github.com/DDYSwift/LearnSwift/blob/master/Swift/Swift6.md)
