@@ -433,5 +433,9 @@ weak var weakself = self
 
 
 
-[闭包资料](http://www.cocoachina.com/articles/23496)
+[闭包资料](http://www.cocoachina.com/articles/23496)    
 [闭包资料](https://www.runoob.com/swift/swift-closures.html)
+
+
+[上一页 Swift2-运算符和流程控制语句](https://github.com/DDYSwift/LearnSwift/blob/master/Swift/Swift2.md)     
+[下一页 Swift4-类 属性 协议 范型 扩展](https://github.com/DDYSwift/LearnSwift/blob/master/Swift/Swift4.md)
