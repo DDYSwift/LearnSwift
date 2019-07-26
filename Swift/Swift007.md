@@ -123,5 +123,5 @@ private class func testAllFunc() {
 [swift中高阶函数map、flatMap、filter、reduce](https://www.cnblogs.com/muzijie/p/6542650.html)    
 
   
-[上一页 Swift6-多线程](https://github.com/DDYSwift/LearnSwift/blob/master/Swift/Swift6.md)    
-[下一页 Swift8-琐碎知识点](https://github.com/DDYSwift/LearnSwift/blob/master/Swift/Swift8.md)
+[上一页 Swift6-多线程](https://github.com/DDYSwift/LearnSwift/blob/master/Swift/Swift006.md)    
+[下一页 Swift8-琐碎知识点](https://github.com/DDYSwift/LearnSwift/blob/master/Swift/Swift008.md)

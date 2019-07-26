@@ -324,5 +324,5 @@
 	}
  	```
 		
-[上一页 Swift7-高阶函数 map flatMap compactMap filter reduce](https://github.com/DDYSwift/LearnSwift/blob/master/Swift/Swift7.md)    
-[下一页 Swift9-加密](https://github.com/DDYSwift/LearnSwift/blob/master/Swift/Swift9.md)
+[上一页 Swift7-高阶函数 map flatMap compactMap filter reduce](https://github.com/DDYSwift/LearnSwift/blob/master/Swift/Swift007.md)    
+[下一页 Swift9-加密](https://github.com/DDYSwift/LearnSwift/blob/master/Swift/Swift009.md)

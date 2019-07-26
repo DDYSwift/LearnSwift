@@ -679,7 +679,7 @@ Group queue 可以通过调用dispatch_group_create()来创建，通过dispatch_
 
 
     
- [上一页 Swift5-转型 可选链 其他知识点](https://github.com/DDYSwift/LearnSwift/blob/master/Swift/Swift5.md)    
- [下一页 Swift7-高阶函数 map flatMap compactMap filter reduce](https://github.com/DDYSwift/LearnSwift/blob/master/Swift/Swift7.md)
+ [上一页 Swift5-转型 可选链 其他知识点](https://github.com/DDYSwift/LearnSwift/blob/master/Swift/Swift005.md)    
+ [下一页 Swift7-高阶函数 map flatMap compactMap filter reduce](https://github.com/DDYSwift/LearnSwift/blob/master/Swift/Swift007.md)
   
   
