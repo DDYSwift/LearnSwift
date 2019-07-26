@@ -116,7 +116,8 @@ class Calcuator{
 
 只有 getter 没有 setter 的计算属性就是只读计算属性。只读计算属性总是返回一个值，可以通过点(.)运算符访问，但不能设置新的值。
 
-如果只要get，不要set方法时可以简写成如下代码     
+如果只要get，不要set方法时可以简写成如下代码   
+  
 ```
 class Calcuator{
     var a:Int = 1;
