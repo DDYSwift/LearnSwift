@@ -159,3 +159,152 @@
 	    }
 	}
 	```
+	
+* ### UIButton
+
+	- UIButtonType     
+	.system：前面不带图标，默认文字颜色为蓝色，有触摸时的高亮效果     
+	.custom：定制按钮，前面不带图标，默认文字颜色为白色，无触摸时的高亮效果    
+	.contactAdd：前面带“+”图标按钮，默认文字颜色为蓝色，有触摸时的高亮效果   
+	.detailDisclosure：前面带“!”图标按钮，默认文字颜色为蓝色，有触摸时的高亮效果   
+	.infoDark：为感叹号“!”圆形按钮(iOS7后同detailDisclosure)   
+	.infoLight：为感叹号“!”圆形按钮(iOS7后同detailDisclosure)
+	
+	- UIControl.State    
+	highlighted: 高亮   
+   	disabled: 禁用   
+	selected: 选中    
+
+	常用属性和方法
+	
+	```
+	let button = UIButton(type: .custom) // 自定义按钮
+	button.setTitle("普通状态", for:.normal) // 文字
+	button.setTitleColor(UIColor.black, for: .normal) // 文本颜色
+	button.setTitleShadowColor(UIColor.green, for:.normal) // 文本阴影颜色
+	button.titleLabel?.shadowOffset = CGSize(width: -1.5, height: -1.5) // 文本阴影偏移
+	button.titleLabel?.font = UIFont(name: "Zapfino", size: 13) // 字体字号
+	button.adjustsImageWhenHighlighted=false // 使触摸模式下按钮也不会变暗（半透明）
+	button.adjustsImageWhenDisabled=false // 使禁用模式下按钮也不会变暗（半透明）
+	button.setImage(UIImage(named:"icon")?.withRenderingMode(.alwaysOriginal), for:.normal) //无渲染图片
+	button.setBackgroundImage(UIImage(named:"bg1"), for:.normal) // 背景图片
+	//传递触摸对象（即点击的按钮），需要在定义action参数时，方法名称后面带上冒号
+	button.addTarget(self, action:#selector(tapped(_:)), for:.touchUpInside)
+ 
+ 	// 事件
+	@objc func tapped(_ button:UIButton){
+     	print(button.title(for: .normal))
+	}
+	```
+
+	UIButton扩展
+	```
+	public enum DDYButtonStyle: Int {
+	    case defaultStyle   = 0 // 默认效果(为了处理无调用状态，不可赋值)
+	    case imageLeft      = 1 // 左图右文
+	    case imageRight     = 2 // 右图左文
+	    case imageTop       = 3 // 上图下文
+	    case imageBottom    = 4 // 下图上文
+	}
+	
+	private var styleKey: Void?
+	private var paddingKey: Void?
+	
+	extension DDYWrapperProtocol where DDYT : UIButton {
+	    /// 设置图文样式(不可逆，一旦设置不能百分百恢复系统原来样式)
+	    var style: DDYButtonStyle {
+	        get {
+	            guard let style = objc_getAssociatedObject(ddyValue, &styleKey) as? DDYButtonStyle else {
+	                return .defaultStyle
+	            }
+	            return style
+	        }
+	        set {
+	            objc_setAssociatedObject(ddyValue, &styleKey, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+	            ddyValue.layoutIfNeeded()
+	        }
+	    }
+	
+	    var padding: CGFloat {
+	        get {
+	            guard let padding = objc_getAssociatedObject(ddyValue, &paddingKey) as? CGFloat else {
+	                return 0.5
+	            }
+	            return padding
+	        }
+	        set {
+	            objc_setAssociatedObject(ddyValue, &paddingKey, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+	            ddyValue.layoutIfNeeded()
+	        }
+	    }
+	
+	    public func setBackgroundColor(_ color: UIColor?, for state: UIControl.State) {
+	        guard let color = color else {
+	            return
+	        }
+	        func colorImage() -> UIImage? {
+	            let rect = CGRect(x: 0.0, y: 0.0, width: 1, height: 1)
+	            UIGraphicsBeginImageContext(rect.size)
+	            let context = UIGraphicsGetCurrentContext()
+	            context?.setFillColor(color.cgColor)
+	            context?.fill(rect)
+	            let image = UIGraphicsGetImageFromCurrentImageContext()
+	            UIGraphicsEndImageContext()
+	            return image ?? nil
+	        }
+	        ddyValue.setImage(colorImage(), for: state)
+	    }
+	}
+	
+	extension UIButton {
+	    public static func ddySwizzleMethod() {
+	        ddySwizzle(#selector(layoutSubviews), #selector(ddyLayoutSubviews), swizzleClass: self)
+	    }
+	
+	    @objc private func ddyLayoutSubviews() {
+	        self.ddyLayoutSubviews()
+	        adjustRect(margin: (contentEdgeInsets.top, contentEdgeInsets.left, contentEdgeInsets.bottom, contentEdgeInsets.right))
+	
+	    }
+	
+	    private func adjustRect(margin:(top: CGFloat, left: CGFloat, bottom: CGFloat, right: CGFloat)) {
+	        guard let imageSize = self.imageView?.frame.size, let titleSize = self.titleLabel?.frame.size else {
+	            return
+	        }
+	        guard imageSize != CGSize.zero && titleSize != CGSize.zero else {
+	            return
+	        }
+	        func horizontal(_ leftView: UIView,_ rightView: UIView) {
+	            let contentW = leftView.frame.width + self.ddy.padding + rightView.frame.width
+	            let contentH = max(leftView.frame.height, rightView.frame.height)
+	            let leftOrigin = CGPoint(x: margin.left, y: (contentH-leftView.frame.height)/2.0 + margin.top)
+	            let rightOrigin = CGPoint(x: margin.left + leftView.frame.width + self.ddy.padding, y: (contentH-rightView.frame.height)/2.0 + margin.top)
+	
+	            self.bounds = CGRect(x: 0, y: 0, width: contentW + margin.left + margin.right, height: contentH + margin.top + margin.bottom)
+	            leftView.frame = CGRect(origin: leftOrigin, size: leftView.frame.size)
+	            rightView.frame = CGRect(origin: rightOrigin, size: rightView.frame.size)
+	        }
+	        func vertical(_ topView: UIView,_ bottomView: UIView,_ backSize: CGSize) {
+	            let contentW = max(max(topView.frame.width, bottomView.frame.width), backSize.width-margin.left-margin.right)
+	            let contentH = max(topView.frame.height + self.ddy.padding + bottomView.frame.height, backSize.height-margin.top-margin.bottom)
+	            let topOrigin = CGPoint(x: (contentW-topView.frame.width)/2.0 + margin.left, y: margin.top)
+	            let bottomOrigin = CGPoint(x: (contentW-bottomView.frame.width)/2.0 + margin.left, y: margin.top + topView.frame.height + self.ddy.padding)
+	
+	            self.bounds = CGRect(x: 0, y: 0, width: contentW + margin.left + margin.right, height: contentH + margin.top + margin.bottom)
+	            topView.frame = CGRect(origin: topOrigin, size: topView.frame.size)
+	            bottomView.frame = CGRect(origin: bottomOrigin, size: bottomView.frame.size)
+	            print("layout: \(self.bounds) \(topView.frame) \(bottomView.frame)")
+	        }
+	
+	        print("0000: \(self.bounds) \(self.imageView!.frame) \(self.titleLabel!.frame)")
+	        titleLabel?.sizeToFit()
+	        switch self.ddy.style {
+	        case .imageLeft: horizontal(self.imageView!, self.titleLabel!)
+	        case .imageRight: horizontal(self.titleLabel!, self.imageView!)
+	        case .imageTop: vertical(self.imageView!, self.titleLabel!, self.frame.size)
+	        case .imageBottom: vertical(self.titleLabel!, self.imageView!, self.frame.size)
+	        default: return
+	        }
+	    }
+	}
+	```
