@@ -174,6 +174,16 @@
 	view.addSubview(imageView)
 	```
 	
+	如果使用kingfisher加载网络图片
+	
+	```
+	imageView.kf.setImage(with: url, placeholder: image)
+	
+	// 如果需要圆角
+	let processor = RoundCornerImageProcessor(cornerRadius: 20)
+	imageView.kf.setImage(with: url, placeholder: nil, options: [.processor(processor)])
+	```
+	
 * ### UIButton
 
 	- UIButtonType     
