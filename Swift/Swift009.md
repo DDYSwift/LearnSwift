@@ -245,4 +245,4 @@
 	
 	
 	[上一页 Swift8-琐碎知识点](https://github.com/DDYSwift/LearnSwift/blob/master/Swift/Swift008.md)   
-	[下一页 Swift8-琐碎知识点](https://github.com/DDYSwift/LearnSwift/blob/master/Swift/Swift010.md)
+	[下一页 Swift10-UIview UILabel UIButton](https://github.com/DDYSwift/LearnSwift/blob/master/Swift/Swift010.md)
