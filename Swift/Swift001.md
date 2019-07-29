@@ -170,6 +170,8 @@ Swift 包含了 Objective-C 上所有基本数据类型，另外还增加了高�
 		// var arrayM = [String]()
 		// var arrayM1:[String]
 		// var arrayM2 = Array()
+		// var array:Array<UIImage!> = []
+		// var array:[UIImage!] = []
 		// 一个数组的完成类型为：Array<ElementType>。ElementType表示数组中元素的类型
 		let array1 = Array<Int>()
 		// 一种精简的表示法：Array[ElementType]
