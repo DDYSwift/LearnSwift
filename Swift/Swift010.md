@@ -27,4 +27,49 @@
 	- func sendSubviewToBack(view:UIView)：把视图移到最底层
 	- func viewWithTag(tag:Int)->UIView?：根据tag值获取视图
 
+
+可以用Extension UIView实现
+
+```
+// MARK:- 手势
+    /// 点击手势(默认代理和target相同)
+    public func tapGesture(_ target: Any?,_ action: Selector,_ numberOfTapsRequired: Int = 1) {
+        let tapGesture = UITapGestureRecognizer(target: target, action: action)
+        tapGesture.numberOfTapsRequired = numberOfTapsRequired
+        tapGesture.delegate = target as? UIGestureRecognizerDelegate
+        ddyValue.isUserInteractionEnabled = true
+        ddyValue.addGestureRecognizer(tapGesture)
+    }
+
+    /// 长按手势(默认代理和target相同)
+    public func longGesture(_ target: Any?,_ action: Selector,_ minDuration: TimeInterval = 0.5) {
+        let longGesture = UILongPressGestureRecognizer(target: target, action: action)
+        longGesture.minimumPressDuration = minDuration
+        longGesture.delegate = target as? UIGestureRecognizerDelegate
+        ddyValue.isUserInteractionEnabled = true
+        ddyValue.addGestureRecognizer(longGesture)
+    }
+
+    /// 圆角与边线
+    public func borderRadius(_ radius: CGFloat,_ masksToBounds: Bool,_ borderWidth: CGFloat = 0,_ borderColor: UIColor = UIColor.clear) {
+        ddyValue.layer.borderWidth = borderWidth
+        ddyValue.layer.borderColor =  borderColor.cgColor
+        ddyValue.layer.cornerRadius = radius
+        ddyValue.layer.masksToBounds = masksToBounds
+    }
+    /// 部分圆角
+    public func partRadius(_ corners: UIRectCorner,_ radius: CGFloat) {
+        let shapeLayer = CAShapeLayer()
+        shapeLayer.frame = ddyValue.bounds
+        shapeLayer.path = UIBezierPath(roundedRect: ddyValue.bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius)).cgPath
+        ddyValue.layer.mask = shapeLayer
+    }
+
+    /// 移除所有子视图
+    public func removeAllChildView() {
+        if ddyValue.subviews.isEmpty == false {
+            _ = ddyValue.subviews.map { $0.removeFromSuperview() }
+        }
+    }
+```
 	
