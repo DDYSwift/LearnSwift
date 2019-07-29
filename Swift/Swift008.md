@@ -300,8 +300,127 @@
 	[参考](https://www.jianshu.com/p/fc8c13ce7157) 
 	
 * ### 一些关键字
+
+	let: 常量声明关键字
 	
-	convenience
+	```
+	class ClassA {
+    let number: Int
+    init(num: Int) {
+        // 在 init 里对 let 声明的常量进行一次赋值(number此时还没有实例化)
+        number = num
+    }
+}
+	```
+	
+	var: 变量声明关键字
+	
+	```
+	var name: String?
+	name = "LiLei"
+	``` 
+	
+	class: 类声明关键字
+	
+	```
+	class ClassB {
+	
+	}
+	```
+	struct:结构体声明关键字
+	
+	```
+	struct StructC {
+	
+	}
+	```
+	
+	enum: 枚举声明关键字
+	
+	```
+	enum Alignment {
+    	case left
+    	case center
+    	case right
+	}
+	```
+	
+	override:重写关键字(方法和属性)
+	
+	```
+	class student: Person {
+    	override var name: String {
+      		return "LiLei"
+    	}
+    	override func age() -> Int {
+         	return 18
+    	}
+	}
+	```
+	
+	final: 防止重写(方法/属性)或继承(类)关键字
+	
+	```
+	final class student {
+		print("如果继承,报错Inheritance from a final class 'student'")
+	}
+	class Name {
+    	final var name :String {
+        	return "LiLei"
+    	}
+    	final func age() -> Int {
+        	return 18
+    	}
+	}
+	```
+	
+	super: 子类调用父类中方法或属性关键字
+	
+	```
+	override func viewDidLoad() {
+        super.viewDidLoad()
+        print("super是编译器符号，代表该子类而不是父类")
+    }
+	```
+	
+	lazy:懒加载关键字
+	
+	```
+	lazy var scanLineView: UIImageView = {
+        let scanLine = UIImageView()
+        return scanLine
+    }()
+    
+    var  name = "ss"
+    lazy var address = name
+	```
+	
+	init:初始化关键字(构造器)
+	
+	```
+	var name:String?
+   init?(value:Any) { // ? 表示可以初始化失败
+     	name = value as? String
+   }
+	```
+	
+	deinit:反初始化关键字(析构)
+	
+	```
+	deinit {
+      	print("反初始化")
+   }
+	```
+	
+	is: 对比关键字
+	
+	```
+	if value is String {
+    	print("我是字符串")
+   	}
+	```
+	
+	convenience: 便利构造器关键字
 	
 	- 指定构造方法(Designated): 没有convenience单词,必须对所有属性进行初始化
 	- 便利构造方法(Convenience): 有convenience单词,不用对所有属性进行初始化，因为便利构造方法依赖于指定构造方法。
@@ -323,6 +442,59 @@
     	}
 	}
  	```
+ 	
+ 	required: 必须实现关键字
+ 	
+ 	```
+ 	class requiredClass{
+    	required init(ss:String) {
+       	print("常用于修饰init，代表必须实现该init")
+    	}
+	}
+ 	```
+ 	
+ 	extension:扩展关键字
+ 	
+ 	```
+ 	extension String {
+ 	
+ 	}
+ 	```
+ 	
+ 	typealias:起别名关键字(命名空间)
+ 	
+ 	```
+ 	typealias MyInt = Int
+ 	
+ 	typealias DDYClosure = (_ str: String?,_ errorCode: Int) -> Void
+ 	```
+ 	
+ 	fallthrough:继续执行关键字(swift 中switch自带break)
+ 	
+ 	```
+ 	switch age {
+	case 17:
+	   print("17")
+    	fallthrough
+	case 18:
+    	print("18")
+    	fallthrough
+	default:
+    	print("1000")
+	}
+ 	```
+ 	
+ 	
+* ### debugPrint
+
+ 
+ ```
+ func DDYPrint<M>(_ message: M) {
+    if _isDebugAssertConfiguration() {
+        print("\(message)")
+    }
+}
+ ```
 		
 [上一页 Swift7-高阶函数 map flatMap compactMap filter reduce](https://github.com/DDYSwift/LearnSwift/blob/master/Swift/Swift007.md)    
 [下一页 Swift9-加密](https://github.com/DDYSwift/LearnSwift/blob/master/Swift/Swift009.md)
