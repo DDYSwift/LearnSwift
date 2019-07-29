@@ -518,7 +518,33 @@
  	Protocol,required,right,set,Type,unowned,willSet
  	```
  	
- 	
+* ### 单例
+
+	```
+	class SharedInstanceTest: NSObject {
+		// swift显式去掉了dispatch_one函数，但是内部lazy却隐式用了
+		// swift仿照OC单例写法
+    	static let instance = SharedInstanceTest()
+    	class func sharedInstance() -> SharedInstanceTest {
+        	return instance
+    	}
+
+    	// 内部结构体写法
+    	static var defaultInstance: SharedInstanceTest {
+        	struct Static {
+            	static let sharedInstance = SharedInstanceTest()
+        	}
+        	return Static.sharedInstance;
+    	}
+
+    	// 简便写法(推荐)
+    	static let `default` = SharedInstanceTest()
+
+    	// 防止外部调用init初始化
+    	private override init() { }
+    	// https://www.jianshu.com/p/10d6cc302366
+	}
+	```
  	
  	
  	
