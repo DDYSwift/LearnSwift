@@ -1,4 +1,4 @@
-# Swift10-UIView UILabel UIButton 
+# Swift10-UIView UILabel UIImageView UIButton 
 
 
 * ###  UIView
@@ -160,6 +160,20 @@
 	}
 	```
 	
+* ### UIImageView 
+
+	常用属性和方法
+	
+	```
+	let imageView = UIImageView()
+	imageView.animationImages = imagesArray
+	imageView.animationRepeatCount = 0
+	imageView.animationDuration = 5 * 0.5
+	imageView.startAnimating()
+	imageView.contentMode = .scaleAspectFit
+	view.addSubview(imageView)
+	```
+	
 * ### UIButton
 
 	- UIButtonType     
@@ -209,6 +223,7 @@
 	```
 
 	UIButton扩展
+	
 	```
 	public enum DDYButtonStyle: Int {
 	    case defaultStyle   = 0 // 默认效果(为了处理无调用状态，不可赋值)
@@ -317,5 +332,5 @@
 	        default: return
 	        }
 	    }
-	}
+	}      
 	```
