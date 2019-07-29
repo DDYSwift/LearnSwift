@@ -484,6 +484,44 @@
 	}
  	```
  	
+ 	与声明有关的关键字: 
+ 	
+ 	```    
+ 	import,class,enum,struct,extension,protocol,        
+ 	init,deinit,func,var,let, typealias,       
+ 	fileprivate,private,internal,public,open,   
+ 	static,operator,subscript, 
+ 	```    
+ 	
+ 	与语句有关的关键字:  
+ 	  
+ 	```
+ 	if,else,for,while,do,switch,     
+ 	where,in,case,    
+ 	break,return,fallthrough,
+ 	```   
+ 	
+ 	表达式和类型关键字:   
+ 	
+ 	```
+ 	as,dynamicType,true,false,is,nil,    
+ 	self,Self,super, 
+ 	_COLUMN_, _FILE_, _FUNCTION_, _LINE_
+ 	```
+ 	
+ 	在特定上下文中使用的关键字
+ 	
+ 	```
+ 	associativity,convenience,dynamic	didSet,final,get,
+ 	infix,inout,lazy,left,mutating,none,nonmutating,
+ 	optional,override,postfix,precedence,prefix,weak
+ 	Protocol,required,right,set,Type,unowned,willSet
+ 	```
+ 	
+ 	
+ 	
+ 	
+ 	
  	
 * ### debugPrint
 
