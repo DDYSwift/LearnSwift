@@ -305,12 +305,12 @@
 	
 	```
 	class ClassA {
-    let number: Int
-    init(num: Int) {
-        // 在 init 里对 let 声明的常量进行一次赋值(number此时还没有实例化)
-        number = num
-    }
-}
+    	let number: Int
+    	init(num: Int) {
+        	// 在 init 里对 let 声明的常量进行一次赋值(number此时还没有实例化)
+        	number = num
+    	}
+	}
 	```
 	
 	var: 变量声明关键字
