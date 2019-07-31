@@ -549,16 +549,40 @@
  	
  	
  	
-* ### debugPrint
+* ### debugPrint	  
+
+	如果想只在debug模式打印，而不去配置build configuration可以这么用
 
  
- ```
- func DDYPrint<M>(_ message: M) {
-    if _isDebugAssertConfiguration() {
-        print("\(message)")
-    }
-}
- ```
+	 ```
+	 func DDYPrint<M>(_ message: M) {
+	    if _isDebugAssertConfiguration() {
+	        print("\(message)")
+	    }
+	}
+	 ```
+	 
+* ### 去除UIView(特别UILabel)上莫名其妙多出的横线
+
+	```
+	// OC	
+	// CGRectIntegral(this_frame)
+	// Swift
+	this_frame.integral
+	```
+	
+* ### 去除滚动可能出现的诡异动画
+
+	```
+	CATransaction.begin() 
+	CATransaction.setDisableActions(true)
+	// 滚动到最后一行
+	scrollToRow(at: IndexPath(item: letterDetailVMArr.count - 1, section: 0), at: UITableViewScrollPosition.bottom, animated: false)
+	CATransaction.commit() 
+	```
+	[参考](https://blog.csdn.net/Felicity294250051/article/details/84069002)
+ 
+ 
 		
 [上一页 Swift7-高阶函数 map flatMap compactMap filter reduce](https://github.com/DDYSwift/LearnSwift/blob/master/Swift/Swift007.md)    
 [下一页 Swift9-加密](https://github.com/DDYSwift/LearnSwift/blob/master/Swift/Swift009.md)
