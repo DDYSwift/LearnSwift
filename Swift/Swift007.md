@@ -47,6 +47,8 @@ print("\(result1) \(result2) \(result3) \(result4) \(result5)")
 flatMap 对集合类型的数据进行循环，并对每个元素采取相同操作，然后返回一个一维集合
 compactMap 对集合类型的数据进行循环，并对每个元素采取相同操作，然后返回一个同维集合
 
+flatMap已经禁止
+
 例如，要对一个二维整型数组内所有数字进行+1
 
 ```
@@ -59,8 +61,8 @@ private class func testFlatMap() {
 	print("加1后数组2：\(newNumArray2)")
 	print("加1后数组3：\(newNumArray3)")
 	// 加1后数组1：[2, 3, 4, 5, 6, 7]
-	// 加1后数组1：[[2, 3, 4], [5, 6, 7]]
 	// 加1后数组2：[[2, 3, 4], [5, 6, 7]]
+	// 加1后数组3：[[2, 3, 4], [5, 6, 7]]
 }
 ```
 
@@ -109,6 +111,28 @@ private class func testAllFunc() {
 	- flatMap 去nil,返回后的数组中不存在 nil 同时它会把Optional解包;
 	- flatMap 降纬，把数组中存有数组的数组一同打开变成一个新的数组;
 	- flatMap 也能把两个不同的数组合并成一个数组 这个合并的数组元素个数是前面两个数组元素个数的乘积
+
+	```
+	let array0: [Int?] = [1, 2, 3, nil, 4, 5]
+	
+	let array1: [Int?]  = array0.map { $0 }
+	// let array2: [Int]   = array0.map { $0 } // Cannot convert value of type 'Int?' to closure result type 'Int'
+	let array3          = array0.map { $0 }
+	let array4: [Int?]  = array0.compactMap { $0 }
+	let array5: [Int]   = array0.compactMap { $0 }
+	let array6          = array0.compactMap { $0 }
+	
+	print("1:\(array1)")
+	print("2:\(array3)")
+	print("4:\(array4)")
+	print("5:\(array5)")
+	print("6:\(array6)")
+	// 1:[Optional(1), Optional(2), Optional(3), nil, Optional(4), Optional(5)]
+	// 2:[Optional(1), Optional(2), Optional(3), nil, Optional(4), Optional(5)]
+	// 4:[Optional(1), Optional(2), Optional(3), nil, Optional(4), Optional(5)]
+	// 5:[1, 2, 3, 4, 5]
+	// 6:[1, 2, 3, 4, 5]	
+	```
 
 * 学习这些高阶函数有什么意义？
 
