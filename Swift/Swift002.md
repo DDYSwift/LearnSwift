@@ -97,6 +97,7 @@ if UIApplication.shared.canOpenURL(settingURL) {
 
 ```
 public class func testSwitch() {
+
         // Swift中不需在用break跳出switch。若想用C风格的落入特性，需给case分支插入fallthrough语句
         let fruit = "apple"
         switch fruit {
@@ -104,6 +105,7 @@ public class func testSwitch() {
         case "banana","orange": print("great")
         default: print("bad")
         }
+        
         // case分支还可以进行区间匹配
         let age = 5
         switch age {
@@ -111,6 +113,7 @@ public class func testSwitch() {
         case 12...18: print("少年")
         default: print("其他")
         }
+        
         // case分支同样支持单侧区间匹配
         let num = -5
         switch num {
@@ -118,6 +121,7 @@ public class func testSwitch() {
         case 0...: print("正数")
         default: print("0")
         }
+        
         // 使用元组匹配（如：判断属于哪个象限）
         let point = (2,2)
         switch point {
@@ -126,6 +130,7 @@ public class func testSwitch() {
         case (0,_): print("坐标在y轴上")
         default: print("在象限区域")
         }
+        
         // case中还可以使用where关键字来做额外的判断条件
         let height = 1.72
         switch height{
@@ -133,6 +138,7 @@ public class func testSwitch() {
         case 1...3 where height == 2: print("case 2")
         default: print("default")
         }
+        
         // 值绑定
         let anotherPoint = (2, 0)
         switch anotherPoint {
@@ -144,6 +150,7 @@ public class func testSwitch() {
             print("somewhere else at (\(x), \(y))")
         }
         // on the x-axis with an x value of 2
+        
         // 复合案例
         let someCharacter: Character = "e"
         switch someCharacter {
@@ -156,6 +163,7 @@ public class func testSwitch() {
             print("\(someCharacter) is not a vowel or a consonant")
         }
         // e is a vowel
+        
         // 复合案例 结合 值绑定
         let stillAnotherPoint = (9, 0)
         switch stillAnotherPoint {
@@ -165,7 +173,26 @@ public class func testSwitch() {
             print("Not on an axis")
         }
         // On an axis, 9 from the origin
-    }
+        
+        // 超级用法
+        
+		indirect enum DDYCode {
+    	case upc(Int, Int, Int, Int)
+    	case qrcode(String)
+    	static func == (lps: DDYCode, rps: DDYCode) -> Bool {
+        	switch (lps, rps) {
+        	case (let .upc(a1, b1, c1, d1), let .upc(a2, b2, c2, d2)): 
+        	return a1 == a2 && b1 == b2 && c1 == c2 && d1 == d2
+        	
+        	case (let .qrcode(str1), let .qrcode(str2)): 
+        	return str1 == str2
+        	
+        	default: 
+        	return false
+        	}
+    	}
+	}
+}
 ```
 
 ### for
