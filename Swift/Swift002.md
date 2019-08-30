@@ -177,14 +177,14 @@ public class func testSwitch() {
         // 超级用法
         
 		indirect enum DDYCode {
-    	case upc(Int, Int, Int, Int)
-    	case qrcode(String)
-    	static func == (lps: DDYCode, rps: DDYCode) -> Bool {
-        	switch (lps, rps) {
-        	case (let .upc(a1, b1, c1, d1), let .upc(a2, b2, c2, d2)): 
-        	return a1 == a2 && b1 == b2 && c1 == c2 && d1 == d2
+    	case integerCode(Int)
+    	case stringcode(String)
+    	static func == (firstCode: DDYCode, secondCode: DDYCode) -> Bool {
+        	switch (firstCode, secondCode) {
+        	case (let . integerCode(a1), let . integerCode(a2)): 
+        	return a1 == a2
         	
-        	case (let .qrcode(str1), let .qrcode(str2)): 
+        	case (let . stringcode(str1), let . stringcode(str2)): 
         	return str1 == str2
         	
         	default: 
