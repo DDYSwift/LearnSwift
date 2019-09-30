@@ -648,7 +648,7 @@ Swift 包含了 Objective-C 上所有基本数据类型，另外还增加了高�
 	print("\(certificateType.contains(.Passport))") // false
 	```
 	
-	OC中枚举在Swift中的两种姿势
+	OC中位移枚举多值传输在Swift中的两种姿势
 	
 	```
 	// 姿势一：通过rawValue方法赋值
