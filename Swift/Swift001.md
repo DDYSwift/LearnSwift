@@ -1,4 +1,4 @@
-# Swift1-数据类型 元组 枚举 结构体     
+# Swift001-数据类型 元组 枚举 结构体     
 
 Swift 包含了 Objective-C 上所有基本数据类型，另外还增加了高阶数据类型，如元组(Tuple)，还增加了可选类型(Optional)
 
@@ -646,6 +646,16 @@ Swift 包含了 Objective-C 上所有基本数据类型，另外还增加了高�
 	// 判断位移枚举的变量是否存在不再是用& 而是用.contains()
 	print("\(certificateType.contains(.IDCard))") // true
 	print("\(certificateType.contains(.Passport))") // false
+	```
+	
+	OC中枚举在Swift中的两种姿势
+	
+	```
+	// 姿势一：通过rawValue方法赋值
+	self.tableView.autoresizingMask = UIViewAutoresizing(rawValue: UIViewAutoresizing.flexibleHeight.rawValue | UIViewAutoresizing.flexibleWidth.rawValue)
+
+	// 姿势二：通过中括号的形式赋值
+	self.tableView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
 	```
 
 #### 可选类型
