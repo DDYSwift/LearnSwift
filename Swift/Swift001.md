@@ -9,8 +9,11 @@ Swift 包含了 Objective-C 上所有基本数据类型，另外还增加了高�
 
 #### 整型
 
- + 有符号整型：Int，Int8，Int16，Int32，Int64
- + 无符号整型：UInt，UInt8，UInt16，UInt32，UInt64
+* ##### 种类
+
+ + 有符号整型: Int，Int8，Int16，Int32，Int64
+ + 无符号整型: UInt，UInt8，UInt16，UInt32，UInt64
+ + 兼容NS框架: NSInteger
 
 	一般来说，不需要专门指定整数的长度。Swift中整数类型Int的长度与当前平台的原生字长相同：
 	> 在32位平台上，Int和Int32长度相同。    
@@ -18,10 +21,9 @@ Swift 包含了 Objective-C 上所有基本数据类型，另外还增加了高�
 	> 在64位平台上，Int和Int64长度相同。    
 	> 在64位平台上，UInt和UInt64长度相同。    
 
-	用例
+* ##### 用例
 	
 	```
-	/// 整型用例 Int and UInt
 	public class func testBasic() {
 		let age: UInt = 18
 		var count: Int = 10086
@@ -31,7 +33,7 @@ Swift 包含了 Objective-C 上所有基本数据类型，另外还增加了高�
 	}
 	```
 
-	随机数
+* ##### 随机数
 
 	arc4random() 这个全局函数会生成10位数的随机整数（UInt32）。其生成的最大值是4294967295（2^32 - 1），最小值为0。
 
@@ -44,13 +46,14 @@ Swift 包含了 Objective-C 上所有基本数据类型，另外还增加了高�
 
 #### 浮点型
 
-+ Double: 表示64位浮点数。当你需要存储很大或者很高精度的浮点数时请使用此类型。
-+ Float: 表示32位浮点数。精度要求不高的话可以使用此类型。
+* ##### 种类
 
-	用例
+	+ Double/Float64: 64位浮点数。存储很大或精度很高的浮点数时使用。
+	+ Float/Float32: 32位浮点数。精度要求不高时使用。
+
+* ##### 用例
 	
 	```
-	/// 浮点型用例 Float and Double
 	public class func testBasic() {
 		let score: Float = 99.5
 		var velocity: Double = 10.333333333
@@ -70,12 +73,13 @@ Swift 包含了 Objective-C 上所有基本数据类型，另外还增加了高�
 
 #### 布尔型
 
-+ Bool: 用来表示逻辑上真(true)与假(false)，但不能用0和非0表示
+* ##### 种类
 
-	用例
+	+ Bool: 用来表示逻辑上真(true)与假(false)，但不能用0和非0表示
+
+* ##### 用例
 
 	```
-	/// 布尔型用例 Bool
 	public class func testBasic() {
 		var isSelected: Bool = false
 		isSelected = true
@@ -87,9 +91,11 @@ Swift 包含了 Objective-C 上所有基本数据类型，另外还增加了高�
 
 #### 字符型
 
-+ Character: 一般指单个字符
+* ##### 种类
 
-	用例
+	+ Character: 一般指单个字符
+
+* ##### 用例
 
 	```
 	let firstChar = "C"
@@ -98,17 +104,20 @@ Swift 包含了 Objective-C 上所有基本数据类型，另外还增加了高�
 
 #### 字符串
 
-+ String: 是字符的序列集合
+* ##### 种类
 
-	Swift 中 String 与 OC 中 NSString对比：     
-	String 是一个结构体，性能更高     
-	NSString 是一个 OC 对象，性能略差     
-	String 支持直接遍历     
+	+ String: 是字符的序列集合
+	+ NSString: 兼容NS框架字符串
 
-	用例
+* ##### String和NSString比较
+     
+	* String 是一个结构体，性能更高     
+	* NSString 是一个OC类，性能略差     
+	* String 支持直接遍历     
+
+* ##### String用例
 
 	```
-	/// 字符串用例
 	public class func testBasic() {
 		var city = "BeiJing"
 		// 用\(str) 方式包裹变量常量
@@ -134,7 +143,7 @@ Swift 包含了 Objective-C 上所有基本数据类型，另外还增加了高�
     }
 	```
 
-	截取字符串
+* ##### String截取字符串
 
 	```
 	/// 取子字符串
@@ -159,11 +168,13 @@ Swift 包含了 Objective-C 上所有基本数据类型，另外还增加了高�
 
 	数组使用有序列表存储同一类型的多个值。相同的值可以多次出现在一个数组的不同位置中。
 
-	Swift数组与OC数组区别：     
-	Array是一个结构体，而不是一个类     
-	可以放普通类型     
+* ##### Array和NSArray比较
+     
+	* Array是一个Swift结构体，性能较高
+	* NSArray是一个OC类，性能略差     
+	* Array可以放普通类型     
 
-	用例
+* ##### 用例
 
 	```
 	public class func testBasic() {
@@ -812,6 +823,48 @@ print(errorCode)
 print(errorInfo)
 ```
 
+#### 一些等价关系
+
+```
+public typealias Void = ()
+
+/// A 32-bit floating point type.
+public typealias Float32 = Float
+
+/// A 64-bit floating point type.
+public typealias Float64 = Double
+
+/// The default type for an otherwise-unconstrained integer literal.
+public typealias IntegerLiteralType = Int
+
+/// The default type for an otherwise-unconstrained floating point literal.
+public typealias FloatLiteralType = Double
+
+/// The default type for an otherwise-unconstrained Boolean literal.
+///
+/// When you create a constant or variable using one of the Boolean literals
+/// `true` or `false`, the resulting type is determined by the
+/// `BooleanLiteralType` alias. For example:
+///
+///     let isBool = true
+///     print("isBool is a '\(type(of: isBool))'")
+///     // Prints "isBool is a 'Bool'"
+///
+/// The type aliased by `BooleanLiteralType` must conform to the
+/// `ExpressibleByBooleanLiteral` protocol.
+public typealias BooleanLiteralType = Bool
+
+/// The default type for an otherwise-unconstrained unicode scalar literal.
+public typealias UnicodeScalarType = String
+
+/// The default type for an otherwise-unconstrained Unicode extended
+/// grapheme cluster literal.
+public typealias ExtendedGraphemeClusterType = String
+
+/// The default type for an otherwise-unconstrained string literal.
+public typealias StringLiteralType = String
+```
+
 Any、AnyObject
 
 Any是一个空协议集合的别名，它表示没有实现任何协议，因此它可以是任何类型，包括类实例与结构体实例。可以表示任何类型，包括函数类型。
@@ -846,6 +899,8 @@ Swift有类型推导，会自动根据后面的赋值来决定前面的标识符
 * [学习Swift www.swift51.com](http://www.swift51.com/swift.html)
 
 <br><br><br><br><br>
+
+
 
 
 [下一页 Swift2-运算符和流程控制语句](https://github.com/DDYSwift/LearnSwift/blob/master/Swift/Swift002.md) 
