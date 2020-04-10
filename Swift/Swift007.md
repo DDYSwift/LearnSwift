@@ -148,4 +148,4 @@ private class func testAllFunc() {
 
   
 [上一页 Swift6-多线程](https://github.com/DDYSwift/LearnSwift/blob/master/Swift/Swift006.md)    
-[下一页 Swift8-琐碎知识点](https://github.com/DDYSwift/LearnSwift/blob/master/Swift/Swift008.md)
+[下一页 Swift8-琐碎知识点](https://github.com/DDYSwift/LearnSwift/blob/master/Swift/Swift008.md) 
