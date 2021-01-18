@@ -145,6 +145,7 @@ private class func testAllFunc() {
 [Swift 四种高阶函数简介](https://www.jianshu.com/p/7f4472c1b039)  
 [Swift之Map与CompactMap区别](https://www.jianshu.com/p/07b59f4f0071)    
 [swift中高阶函数map、flatMap、filter、reduce](https://www.cnblogs.com/muzijie/p/6542650.html)    
+[Swift 4.1迁移 flatMap to compactMap](https://www.jianshu.com/p/665d2c3e84b7)    
 
   
 [上一页 Swift6-多线程](https://github.com/DDYSwift/LearnSwift/blob/master/Swift/Swift006.md)    
