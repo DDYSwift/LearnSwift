@@ -93,6 +93,10 @@
 * [converting-pix2pix-to-coreml-model-ef49c7819102](https://rockyshikoku.medium.com/converting-pix2pix-to-coreml-model-ef49c7819102)
 * [demo](https://github.com/Xiaoye220/Demos)
 * [Awesome-GAN-Papers](https://github.com/happy-jihye/Awesome-GAN-Papers)
+* [一些扩展](https://github.com/tungxuan1656/swift-helper)
+* [学习蓝牙流程](https://github.com/NicolasNC/NCBluetooth)
+* [tensorflowliteswift 风格迁移](https://github.com/altonelli/FastStyleTransferDemo)
+* [SwiftUI接UIkit](https://github.com/EriaWist/My_Article/tree/a4f110036249f6e9aa14394be8c37e70e4f5de5b/Swift/筆記(README是簡介)/Swift-SwiftUI接UIkit)
 
 ```
 
