@@ -668,6 +668,27 @@ Swift 包含了 Objective-C 上所有基本数据类型，另外还增加了高�
 	// 姿势二：通过中括号的形式赋值
 	self.tableView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
 	```
+	
+* CaseIterable
+
+通过遵守 CaseIterable 协议，可以通过 allCases 属性来获取所有 case 的集合
+
+[参考](https://juejin.cn/post/6915318105853919245)
+
+```
+enum Direction: CaseIterable {
+    case east
+    case west
+    case north
+    case south
+}
+// 可以获取所有 case 的数量
+let count = Direction.allCases.count
+// 也可以遍历所有 case
+for direction in Direction.allCases {
+    print(direction)
+}
+```
 
 #### 可选类型
 

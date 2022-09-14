@@ -195,6 +195,14 @@ public class func testSwitch() {
 }
 ```
 
+###  if-case-let
+
+```
+case let .success(data) where data.count > 100:
+
+if case let .success(data) = result, data.count > 100 { ... }
+```
+
 ### for
 
 ```
@@ -391,7 +399,8 @@ var pointer2 = CenterPointer(x:4, y:5)
 pointer1 += pointer2
 ```
 
-[extension及fatalError](https://www.cnblogs.com/Jepson1218/p/5277682.html)
+* [extension及fatalError](https://www.cnblogs.com/Jepson1218/p/5277682.html)
+* [swift-if-case-let](https://useyourloaf.com/blog/swift-if-case-let/)
 
 [上一页 Swift1-数据类型 元组 枚举 结构体](https://github.com/DDYSwift/LearnSwift/blob/master/Swift/Swift001.md)      
 [下一页 Swift3-访问修饰词 函数 闭包](https://github.com/DDYSwift/LearnSwift/blob/master/Swift/Swift003.md)

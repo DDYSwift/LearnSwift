@@ -97,6 +97,8 @@
 * [学习蓝牙流程](https://github.com/NicolasNC/NCBluetooth)
 * [tensorflowliteswift 风格迁移](https://github.com/altonelli/FastStyleTransferDemo)
 * [SwiftUI接UIkit](https://github.com/EriaWist/My_Article/tree/a4f110036249f6e9aa14394be8c37e70e4f5de5b/Swift/筆記(README是簡介)/Swift-SwiftUI接UIkit)
+* [Swift中的@objc、@objcMembers关键字探讨](https://juejin.cn/post/6941575685580750862)
+* [Swift 5.5带来了async/await和actor支持](https://juejin.cn/post/6975036374105718820)
 
 ```
 
