@@ -65,3 +65,7 @@ image list 命令可以列出当前App中的所有module（这个module 在后�
 
 ##### 进模拟器沙盒
 在启动函数打断点，运行到断点后， po NSHomeDirectory()，拷贝地址，终端open path
+
+
+* [https://lldb.llvm.org/](https://lldb.llvm.org/)
+* [LLDB命令速查手册](https://easeapi.com/blog/blog/156-lldb.html)
