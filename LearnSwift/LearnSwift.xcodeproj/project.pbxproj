@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0434931E28D8436E00F81800 /* DDYLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0434931D28D8436E00F81800 /* DDYLog.swift */; };
 		0493E61D28D03338009F80BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0493E61C28D03338009F80BA /* AppDelegate.swift */; };
 		0493E62128D03338009F80BA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0493E62028D03338009F80BA /* ViewController.swift */; };
 		0493E62428D03338009F80BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0493E62228D03338009F80BA /* Main.storyboard */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0434931D28D8436E00F81800 /* DDYLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DDYLog.swift; sourceTree = "<group>"; };
 		0493E61928D03338009F80BA /* LearnSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LearnSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0493E61C28D03338009F80BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0493E62028D03338009F80BA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -39,9 +41,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0434931C28D8436200F81800 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				0434931D28D8436E00F81800 /* DDYLog.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		0493E61028D03338009F80BA = {
 			isa = PBXGroup;
 			children = (
+				0434931C28D8436200F81800 /* Helper */,
 				0493E63028D03395009F80BA /* Base */,
 				0493E61B28D03338009F80BA /* LearnSwift */,
 				0493E61A28D03338009F80BA /* Products */,
@@ -152,6 +163,7 @@
 				0493E62128D03338009F80BA /* ViewController.swift in Sources */,
 				0493E63928D07338009F80BA /* Tokenizer.swift in Sources */,
 				0493E63228D03433009F80BA /* DataType.swift in Sources */,
+				0434931E28D8436E00F81800 /* DDYLog.swift in Sources */,
 				0493E61D28D03338009F80BA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
