@@ -289,6 +289,7 @@ private class func testCloseClosurePrint() {
 ```
 
 * 自动闭包：不接受任何参数，直接返回表达式的值。允许延迟计算。
+（自动闭包就是将一个非闭包形式的表达参数 自动转化为闭包的表达形式并且传给一个普通函数表达形式）
 
 ```
 var cities = ["Beijing","Shanghai","New York", "Paris","London"]
