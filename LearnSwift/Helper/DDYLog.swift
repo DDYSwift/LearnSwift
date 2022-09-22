@@ -45,8 +45,7 @@ final public class DDYLog {
     ///   - lineNumber: line number
     public static func info(_ string: String, fileName: String = #file, methodName: String = #function, lineNumber: Int = #line) {
         #if DEBUG
-        let file = (fileName as NSString).lastPathComponent.replacingOccurrences(of: ".Swift", with: "")
-        let log = "\(file):line \(lineNumber) method:\(methodName):\(string)"
+        let log = "\(fileName):line \(lineNumber) method:\(methodName):\(string)"
         if output.contains(.info) {
             if #available(iOS 10.0, *) {
                 os_log("%@", log: infoLog, type: .info, log)
@@ -121,3 +120,5 @@ final public class DDYLog {
         #endif
     }
 }
+// [swift 自定义Log，提升调试效率](https://www.jianshu.com/p/5946b4859e10)
+// [探索 Swift 中的日志系统](https://www.136.la/jingpin/show-13384.html)
