@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		0434931E28D8436E00F81800 /* DDYLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0434931D28D8436E00F81800 /* DDYLog.swift */; };
+		0434932128D84F6800F81800 /* DDYRealReachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0434932028D84F6800F81800 /* DDYRealReachability.swift */; };
+		0434932328D84F8B00F81800 /* DDYUDPTraceRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0434932228D84F8B00F81800 /* DDYUDPTraceRoute.swift */; };
+		0434932528D84FA700F81800 /* DDYTCPPing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0434932428D84FA700F81800 /* DDYTCPPing.swift */; };
+		0434932728D84FB300F81800 /* DDYICMPPing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0434932628D84FB300F81800 /* DDYICMPPing.swift */; };
+		0434933128D8875D00F81800 /* DDYNetdiag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0434933028D8875D00F81800 /* DDYNetdiag.swift */; };
+		0434933328D8879400F81800 /* DDYNetInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0434933228D8879400F81800 /* DDYNetInfo.swift */; };
+		0434933528D8883400F81800 /* LPFDSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0434933428D8883400F81800 /* LPFDSet.swift */; };
 		0493E61D28D03338009F80BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0493E61C28D03338009F80BA /* AppDelegate.swift */; };
 		0493E62128D03338009F80BA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0493E62028D03338009F80BA /* ViewController.swift */; };
 		0493E62428D03338009F80BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0493E62228D03338009F80BA /* Main.storyboard */; };
@@ -19,6 +26,13 @@
 
 /* Begin PBXFileReference section */
 		0434931D28D8436E00F81800 /* DDYLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DDYLog.swift; sourceTree = "<group>"; };
+		0434932028D84F6800F81800 /* DDYRealReachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDYRealReachability.swift; sourceTree = "<group>"; };
+		0434932228D84F8B00F81800 /* DDYUDPTraceRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDYUDPTraceRoute.swift; sourceTree = "<group>"; };
+		0434932428D84FA700F81800 /* DDYTCPPing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDYTCPPing.swift; sourceTree = "<group>"; };
+		0434932628D84FB300F81800 /* DDYICMPPing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDYICMPPing.swift; sourceTree = "<group>"; };
+		0434933028D8875D00F81800 /* DDYNetdiag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDYNetdiag.swift; sourceTree = "<group>"; };
+		0434933228D8879400F81800 /* DDYNetInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DDYNetInfo.swift; sourceTree = "<group>"; };
+		0434933428D8883400F81800 /* LPFDSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LPFDSet.swift; sourceTree = "<group>"; };
 		0493E61928D03338009F80BA /* LearnSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LearnSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0493E61C28D03338009F80BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0493E62028D03338009F80BA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -49,9 +63,24 @@
 			path = Helper;
 			sourceTree = "<group>";
 		};
+		0434931F28D84E9C00F81800 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				0434932028D84F6800F81800 /* DDYRealReachability.swift */,
+				0434932228D84F8B00F81800 /* DDYUDPTraceRoute.swift */,
+				0434932428D84FA700F81800 /* DDYTCPPing.swift */,
+				0434932628D84FB300F81800 /* DDYICMPPing.swift */,
+				0434933028D8875D00F81800 /* DDYNetdiag.swift */,
+				0434933228D8879400F81800 /* DDYNetInfo.swift */,
+				0434933428D8883400F81800 /* LPFDSet.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		0493E61028D03338009F80BA = {
 			isa = PBXGroup;
 			children = (
+				0434931F28D84E9C00F81800 /* Network */,
 				0434931C28D8436200F81800 /* Helper */,
 				0493E63028D03395009F80BA /* Base */,
 				0493E61B28D03338009F80BA /* LearnSwift */,
@@ -160,11 +189,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0434932128D84F6800F81800 /* DDYRealReachability.swift in Sources */,
+				0434932528D84FA700F81800 /* DDYTCPPing.swift in Sources */,
 				0493E62128D03338009F80BA /* ViewController.swift in Sources */,
 				0493E63928D07338009F80BA /* Tokenizer.swift in Sources */,
+				0434932728D84FB300F81800 /* DDYICMPPing.swift in Sources */,
+				0434933328D8879400F81800 /* DDYNetInfo.swift in Sources */,
+				0434933528D8883400F81800 /* LPFDSet.swift in Sources */,
 				0493E63228D03433009F80BA /* DataType.swift in Sources */,
+				0434933128D8875D00F81800 /* DDYNetdiag.swift in Sources */,
 				0434931E28D8436E00F81800 /* DDYLog.swift in Sources */,
 				0493E61D28D03338009F80BA /* AppDelegate.swift in Sources */,
+				0434932328D84F8B00F81800 /* DDYUDPTraceRoute.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
